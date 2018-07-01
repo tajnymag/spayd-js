@@ -1,0 +1,28 @@
+{
+	"name": "spayd",
+	"version": "1.1.0",
+	"description": "An SPAYD generator implemented in js.",
+	"main": "lib/common/index.js",
+	"module": "lib/es/index.js",
+	"jsnext:main": "lib/es/index.js",
+	"author": "Marek Lukáš",
+	"license": "MIT",
+	"scripts": {
+		"build": "yarn run build-es && yarn run build-common",
+		"build-es": "tsc",
+		"build-common": "rollup lib/es/index.js -m --format cjs --file lib/common/index.js",
+		"test": "jest"
+	},
+	"devDependencies": {
+		"@types/jest": "^23.1.4",
+		"jest": "^23.3.0",
+		"rollup": "^0.65.2",
+		"ts-jest": "^23.0.0",
+		"typescript": "^2.9.2"
+	},
+	"dependencies": {
+		"@types/date-fns": "^2.6.0",
+		"date-fns": "^1.29.0",
+		"ibantools": "^2.0.0"
+	}
+}

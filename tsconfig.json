@@ -1,0 +1,15 @@
+{
+	"compilerOptions": {
+		"target": "ES6",
+		"sourceMap": true,
+		"outDir": "lib/es",
+		"moduleResolution": "node"
+	},
+	"include": [
+		"src/*"
+	],
+	"exclude": [
+		"test",
+		"node_modules"
+	]
+}
