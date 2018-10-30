@@ -1,0 +1,18 @@
+language: node_js
+node_js:
+- stable
+- 11
+
+install: yarn install
+
+script: yarn test
+
+before_deploy: yarn build
+
+deploy:
+  on:
+    tags: true
+  provider: npm
+  email: tajnymag@gmail.com
+  api_key:
+    secure: Wk/zCmBg0AZfi1NJEoJgJr5Ia8iMacBM3ea00nGE/DoeOXT4s0i/xsHP681xnMyVeOHqxuSC5Nm7cb5JBLFDGFIU49lj9V58hjujN3erfWJjHYmbg5HSXXroLHhnsBb98lhBppBLF4aa2KbsyvJ8A8xKpVJzn5MW/pB9fOPMe7hbdjBBstA0LsNLpqDeYXOpqaTi2sINFn6+EJNL3wYMrwdQchVIBWmCuFU/XoGKV8IFc00GUOXQ6omPipR7eQ7MEAzYhldRcd22DFQrqBghyZNrXwtmyUXG0V8uyjTQUSJkaR8MA0kX17+QnfTp74CzN38BKo77CasT/tzOO4woNlrqUQ+zIJpiiZxj+kHS+/r2Sd1/kyh600WS/4TH4hMWB6ZauhW3Sxs7z/l2f1S1aTxGziofSJ84XOkf8PoIMi4gv16wLBNzCqPHt1LHOm2Hq0z1/N7ohiY8z5mJ90aTVF1zYHviSfI+eFI2gkD8KEwq1+nLnj23S6Jkc4d3M1ViDE20T+JZzTeUJduvqWIMx3Y7+pzgKutVxb0N3rfv4CiiHIVLUhBpXxFhH2gR6hBNMnrFI/AAKuB6VPTYWGCA+KfUUz90qhoT/uja5cbGl8Wc9VMpA7iMO0DWvNFuvXRfKdjudle+NUBc4cmzTJ4IKgjDcbY4AOfCEPYR4KNQTgg=
