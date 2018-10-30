@@ -1,3 +1,7 @@
+[![build status](https://travis-ci.org/Tajnymag/spayd-js.svg?branch=master)](https://travis-ci.org/Tajnymag/spayd-js)
+[![dependencies](https://david-dm.org/tajnymag/spayd-js.svg)](https://david-dm.org/tajnymag/spayd-js)
+[![npm version](https://badge.fury.io/js/spayd.svg)](https://badge.fury.io/js/spayd)
+
 # spayd-js
 
 An implementation of Short-Payment-Descriptor library in JavaScript/TypeScipt
