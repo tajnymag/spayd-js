@@ -3,7 +3,8 @@
 		"target": "ES6",
 		"sourceMap": true,
 		"outDir": "lib/es",
-		"moduleResolution": "node"
+		"moduleResolution": "node",
+		"declaration": true
 	},
 	"include": [
 		"src/*"
