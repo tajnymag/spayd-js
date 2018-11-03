@@ -12,6 +12,7 @@ before_deploy: yarn build
 deploy:
   on:
     tags: true
+  skip_cleanup: true
   provider: npm
   email: tajnymag@gmail.com
   api_key:
