@@ -46,8 +46,8 @@ export class Acc extends Key {
 }
 
 export class AltAcc extends Key {
-	constructor(value: string) {
-		super('alt-acc', value);
+	constructor(value: string[]) {
+		super('alt-acc', value.join(','));
 
 		if (!this.isValid()) {
 			throw 'The ' + this.name + ' key is in wrong format!'
