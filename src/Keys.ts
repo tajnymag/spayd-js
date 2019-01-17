@@ -1,5 +1,5 @@
 import {isValidIBAN, isValidBIC} from 'ibantools';
-import {isFuture, format, isValid} from "date-fns";
+import {format, isValid} from "date-fns";
 
 abstract class Key {
 	protected name: string;
@@ -100,7 +100,7 @@ export class Dt extends Key {
 	}
 
 	isValid(): boolean {
-		return isValid(this.originalDate) && isFuture(this.originalDate);
+		return isValid(this.originalDate);
 	}
 }
 
