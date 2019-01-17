@@ -37,7 +37,7 @@ console.log(spayd(payment));
 | Required | Descriptor | Format | Description | Example |
 | --- | --- | --- | --- | --- |
 | &#9745; | acc | string | account number in IBAN format or IBAN+BIC format | "CZ5855000000001265098001+RZBCCZPP" |
-| &#9744; | altAcc | string[] | array of alternative accounts (usage of these accounts depends on the bank app implementation | [ "CZ5855000000001265098001+RZBCCZPP", "CZ5855000000001265098001" ] |
+| &#9744; | altAcc | string[] | array of alternative accounts (usage of these accounts depends on the bank app implementation) | [ "CZ5855000000001265098001+RZBCCZPP", "CZ5855000000001265098001" ] |
 | &#9745; | am | string | amount of money to transfer in floating point number string | "480.55" |
 | &#9744; | cc | string | currency in ISO 4217 format | "CZK" |
 | &#9744; | rf | number | payment identifier for the receiver | 1234567890123456 |
