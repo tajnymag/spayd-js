@@ -16,7 +16,7 @@ yarn add spayd-js
 npm install spayd-js --save
 ```
 
-# Usage
+## Usage
 
 ```js
 import spayd from 'spayd-js';
@@ -25,9 +25,33 @@ const payment = {
   acc: 'CZ2806000000000168540115',
   am: '450.00',
   cc: 'CZK',
-  msg: 'PLATBA ZA ZBOZI',
+  msg: 'Payment for some stuff',
   xvs: '1234567890'
 };
 
 console.log(spayd(payment));
 ```
+
+## Options
+
+| Required | Descriptor | Format | Description | Example |
+| --- | --- | --- | --- | --- |
+| &#9745; | acc | string | account number in IBAN format or IBAN+BIC format | "CZ5855000000001265098001+RZBCCZPP" |
+| &#9744; | altAcc | string[] | array of alternative accounts (usage of these accounts depends on the bank app implementation | [ "CZ5855000000001265098001+RZBCCZPP", "CZ5855000000001265098001" ] |
+| &#9745; | am | string | amount of money to transfer in floating point number string | "480.55" |
+| &#9744; | cc | string | currency in ISO 4217 format | "CZK" |
+| &#9744; | rf | number | payment identifier for the receiver | 1234567890123456 |
+| &#9744; | rn | string | receiver's name | "PETR DVORAK"
+| &#9744; | dt | Date | due date | new Date(2018, 3, 20) |
+| &#9744; | pt | string | payment type | "P2P" |
+| &#9744; | msg | string | message for receiver | "Payment for some stuff" |
+| &#9744; | crc32 | string | CRC32 hashsum of this SPAYD payment | "1234ABCD" |
+| &#9744; | xper | string | number of days to retry the payment | "7" |
+| &#9744; | xvs | string | variable symbol | "1234567890" |
+| &#9744; | xss | string | specific symbol | "1234567890" |
+| &#9744; | xks | string | constant symbol | "1234567890" |
+| &#9744; | xid | string | payment identifier for the payer | "ABCDEFGHIJ1234567890" |
+
+For more info about SPAYD descriptors, see:
+* [Ofiicial SPAYD website (CZ)](https://qr-platba.cz/pro-vyvojare/specifikace-formatu/)
+* [SPAYD on Wikipedia (EN)](https://en.wikipedia.org/wiki/Short_Payment_Descriptor)
