@@ -4,7 +4,7 @@
 
 # spayd-js
 
-An implementation of Short-Payment-Descriptor library in JavaScript/TypeScipt
+An implementation of Short-Payment-Descriptor library in JavaScript/TypeScipt. Primarily used for generating QR-Payments.
 
 ## Installation
 
@@ -29,7 +29,32 @@ const payment = {
   xvs: '1234567890'
 };
 
+// print just the SPAYD string
 console.log(spayd(payment));
+```
+
+```js
+import qrcode from 'qrcode';
+import spayd from 'spayd';
+
+const qrCodeEl = document.getElementById('qr');
+
+const payment = {
+  acc: 'CZ2806000000000168540115',
+  am: '450.00',
+  cc: 'CZK',
+  msg: 'Payment for some stuff',
+  xvs: '1234567890'
+};
+
+const spaydString = spayd(payment);
+
+// generate and assign qr-payment to an image element
+qrcode.toDataURL(spaydString)
+  .then((url) => {
+    qrCodeEl.setAttribute('src', url);
+  })
+  .catch(console.error);
 ```
 
 ## Options
