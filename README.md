@@ -10,16 +10,16 @@ An implementation of Short-Payment-Descriptor library in JavaScript/TypeScipt. P
 
 ```bash
 # yarn
-yarn add spayd-js
+yarn add spayd
 
 # npm
-npm install spayd-js --save
+npm install spayd --save
 ```
 
 ## Usage
 
 ```js
-import spayd from 'spayd-js';
+import spayd from 'spayd';
 
 const payment = {
   acc: 'CZ2806000000000168540115',
