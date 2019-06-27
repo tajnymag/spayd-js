@@ -1,17 +1,26 @@
 {
 	"compilerOptions": {
 		"target": "ES6",
-		"sourceMap": true,
-		"outDir": "lib/es",
+		"module": "es6",
+		"strict": false,
+		"importHelpers": true,
 		"moduleResolution": "node",
+		"resolveJsonModule": true,
+		"experimentalDecorators": true,
+		"esModuleInterop": true,
+		"allowSyntheticDefaultImports": true,
+		"sourceMap": true,
+		"baseUrl": ".",
 		"declaration": true,
-		"esModuleInterop": true
+		"declarationDir": "dist/types/"
 	},
+	"types": ["esnext"],
 	"include": [
 		"src/*"
 	],
 	"exclude": [
 		"test",
+		"dist",
 		"node_modules"
 	]
 }

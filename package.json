@@ -4,25 +4,29 @@
 	"description": "An SPAYD generator implemented in js.",
 	"author": "Marek Lukáš",
 	"license": "MIT",
-	"main": "./lib/common/index.js",
-	"module": "./lib/es/index.js",
 	"source": "./src/index.ts",
-	"types": "./lib/es/index.d.ts",
+	"main": "./dist/spayd.common.js",
+	"module": "./dist/spayd.esm.js",
+	"browser": "./dist/spayd.browser.min.js",
+	"types": "./dist/types/index.d.ts",
 	"scripts": {
-		"build": "yarn run build-es && yarn run build-common",
-		"build-es": "tsc",
-		"build-common": "rollup ./lib/es/index.js -m --format cjs --file ./lib/common/index.js",
+		"build": "yarn rollup --config rollup.config.js",
 		"test": "jest"
 	},
 	"devDependencies": {
-		"@types/jest": "^23.1.4",
-		"jest": "^23.3.0",
-		"rollup": "^0.65.2",
-		"ts-jest": "^23.0.0",
-		"typescript": "^2.9.2"
+		"@types/date-fns": "^2.6.0",
+		"@types/jest": "^24.0.15",
+		"jest": "^24.8.0",
+		"rollup": "^1.16.2",
+		"rollup-plugin-commonjs": "^10.0.1",
+		"rollup-plugin-node-resolve": "^5.1.0",
+		"rollup-plugin-terser": "^5.0.0",
+		"rollup-plugin-typescript2": "^0.21.2",
+		"ts-jest": "^24.0.2",
+		"tslib": "^1.10.0",
+		"typescript": "^3.5.2"
 	},
 	"dependencies": {
-		"@types/date-fns": "^2.6.0",
 		"date-fns": "^1.29.0",
 		"ibantools": "^2.0.0"
 	}

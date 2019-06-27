@@ -1,5 +1,6 @@
 import {isValidIBAN, isValidBIC} from 'ibantools';
-import {format, isValid} from "date-fns";
+import format from 'date-fns/format';
+import isValid from 'date-fns/is_valid';
 
 abstract class Key {
 	protected name: string;
