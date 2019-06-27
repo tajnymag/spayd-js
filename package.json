@@ -1,13 +1,12 @@
 {
 	"name": "spayd",
-	"version": "2.0.0",
+	"version": "2.0.1",
 	"description": "An SPAYD generator implemented in js.",
 	"author": "Marek Lukáš",
 	"license": "MIT",
 	"source": "./src/index.ts",
 	"main": "./dist/spayd.common.js",
 	"module": "./dist/spayd.esm.js",
-	"browser": "./dist/spayd.browser.min.js",
 	"types": "./dist/types/index.d.ts",
 	"scripts": {
 		"build": "yarn rollup --config rollup.config.js",
