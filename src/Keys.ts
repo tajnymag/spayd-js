@@ -1,6 +1,6 @@
 import {isValidIBAN, isValidBIC} from 'ibantools';
 import format from 'date-fns/format';
-import isValid from 'date-fns/is_valid';
+import isValid from 'date-fns/isValid';
 
 abstract class Key {
 	protected name: string;
@@ -92,7 +92,7 @@ export class Dt extends Key {
 	private originalDate: Date;
 
 	constructor(value: Date) {
-		super('dt', format(value, 'YYYYMMDD'));
+		super('dt', format(value, 'yyyyMMdd'));
 		this.originalDate = value;
 
 		if (!this.isValid()) {
