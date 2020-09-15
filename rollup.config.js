@@ -18,7 +18,8 @@ export default [
 			},
 			{
 				file: "dist/spayd.common.js",
-				format: "cjs"
+				format: "cjs",
+				exports: "default"
 			}
 		],
 		plugins: [
