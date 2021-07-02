@@ -1,6 +1,6 @@
 {
 	"name": "spayd",
-	"version": "3.0.2",
+	"version": "3.0.3",
 	"description": "An SPAYD generator implemented in js.",
 	"author": "Marek Lukáš",
 	"license": "MIT",

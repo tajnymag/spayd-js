@@ -15,7 +15,7 @@ export default [
 		},
 		external: ["ibantools", "date-fns/format", "date-fns/isValid"],
 		plugins: [
-			typescript({tsconfig: "tsconfig.esm.json"})
+			typescript({tsconfig: "./tsconfig.esm.json"})
 		]
 	},
 	{
@@ -28,7 +28,7 @@ export default [
 		},
 		external: ["ibantools", "date-fns/format", "date-fns/isValid"],
 		plugins: [
-			typescript({tsconfig: "tsconfig.cjs.json"})
+			typescript({tsconfig: "./tsconfig.cjs.json"})
 		]
 	},
 	{
@@ -40,7 +40,7 @@ export default [
 			sourcemap: true
 		},
 		plugins: [resolve(), commonJs(), typescript({
-			tsconfig: "tsconfig.umd.json"
+			tsconfig: "./tsconfig.umd.json"
 		}), terser()]
 	}
 ];
