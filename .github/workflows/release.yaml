@@ -1,0 +1,42 @@
+name: CI/CD
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  test:
+    name: Test tagged release
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: ["lts/*", "16"]
+    steps:
+      - uses: actions/checkout@v2
+      - name: Setup Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v2
+        with:
+          node-version: ${{ matrix.node-version }}
+      - name: Setup dependencies
+        run: yarn install
+      - name: Run tests
+        run: yarn test
+  release:
+    name: Build, release and publish
+    runs-on: ubuntu-latest
+    needs: [test]
+    steps:
+      - uses: actions/checkout@v2
+      - name: Setup Node.js LTS
+        uses: actions/setup-node@v2
+        with:
+          node-version: "lts/*"
+      - name: Setup dependencies
+        run: yarn install
+      - name: Build spayd
+        run: yarn build
+      - name: Publish to npm
+        uses: JS-DevTools/npm-publish@v1
+        with:
+          token: ${{ secrets.NPM_TOKEN }}

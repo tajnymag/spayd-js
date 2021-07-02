@@ -4,7 +4,7 @@
 
 # spayd-js
 
-An implementation of Short-Payment-Descriptor library in JavaScript/TypeScipt. Primarily used for generating QR-Payments.
+An implementation of Short-Payment-Descriptor library in JavaScript/TypeScript. Primarily used for generating QR-Payments.
 
 ## Installation
 
@@ -80,3 +80,17 @@ qrcode.toDataURL(spaydString)
 For more info about SPAYD descriptors, see:
 * [Ofiicial SPAYD website (CZ)](https://qr-platba.cz/pro-vyvojare/specifikace-formatu/)
 * [SPAYD on Wikipedia (EN)](https://en.wikipedia.org/wiki/Short_Payment_Descriptor)
+
+## Package variants
+
+As of version >=3.0, the default export is in the UMD format. This enables you to use the package both in the browser and in nodejs. Plus, it allows it to target legacy browsers, like IE11. If you encounter no troubles with the default export, feel free to keep using it.
+
+If you wanted import specifically an ES6 or CommonJS version of spayd, use the "/esm" or "/cjs" subpath respectively.
+
+```js
+// pure ES6 version
+import spayd from "spayd/esm";
+
+// CommonJS version
+const spayd = require("spayd/cjs");
+```

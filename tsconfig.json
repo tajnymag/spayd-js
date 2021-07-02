@@ -1,6 +1,5 @@
 {
 	"compilerOptions": {
-		"target": "ES6",
 		"module": "es6",
 		"strict": false,
 		"importHelpers": true,
