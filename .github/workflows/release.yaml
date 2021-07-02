@@ -3,7 +3,6 @@ name: Release to NPM
 on:
   push:
     tags: ["v*"]
-    branches: [master]
 
 jobs:
   test:
