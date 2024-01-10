@@ -131,7 +131,7 @@ export class Xper extends Key {
 
 export class Xvs extends Key {
 	constructor(value: string) {
-		super('x-vs', value, /^[1-9][0-9]{0,9}$/);
+		super('x-vs', value, /^[0-9]{0,10}$/);
 	}
 }
 
