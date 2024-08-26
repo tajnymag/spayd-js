@@ -52,12 +52,36 @@ describe('spayd()', () => {
 	it('throws an exception when given an uknown key in the payment config', () => {
 		expect(() => spayd({
 			acc: 'CZ2806000000000168540115',
-			am: '450,00',
+			am: '450.00',
 			cc: 'CZK',
 			msg: 'PLATBA ZA ZBOZI',
 			xvs: '1234567890',
 			// @ts-ignore
 			unknownKey: 'xxxxxxx'
 		})).toThrow();
+	});
+
+	it('Zero amount with decimal', () => {
+		expect(() => spayd({
+			acc: 'CZ2806000000000168540115',
+			am: '0.00',
+			cc: 'CZK'
+		})).toThrow();
+	});
+
+	it('Zero amount without decimal', () => {
+		expect(() => spayd({
+			acc: 'CZ2806000000000168540115',
+			am: '0',
+			cc: 'CZK'
+		})).toThrow();
+	});
+
+	it('Amount less then one', () => {
+		expect(spayd({
+			acc: 'CZ2806000000000168540115',
+			am: '0.01',
+			cc: 'CZK'
+		})).toBe('SPD*1.0*ACC:CZ2806000000000168540115*AM:0.01*CC:CZK');
 	});
 });
