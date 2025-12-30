@@ -8,9 +8,18 @@
 	"main": "./dist/spayd.umd.min.js",
 	"types": "./dist/types/index.d.ts",
 	"exports": {
-		".": "./dist/spayd.umd.min.js",
-		"./esm": "./dist/spayd.esm.js",
-		"./cjs": "./dist/spayd.cjs.js"
+		".": {
+			"default": "./dist/spayd.umd.min.js",
+			"types": "./dist/types/index.d.ts"
+		},
+		"./esm": {
+			"default": "./dist/spayd.esm.js",
+			"types": "./dist/types/index.d.ts"
+		},
+		"./cjs": {
+			"default": "./dist/spayd.cjs.js",
+			"types": "./dist/types/index.d.ts"
+		}
 	},
 	"typesVersions": {
 		"*": {
