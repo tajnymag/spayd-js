@@ -7,6 +7,7 @@
 	"source": "./src/index.ts",
 	"main": "./dist/spayd.umd.min.js",
 	"types": "./dist/types/index.d.ts",
+	"repository": "github:tajnymag/spayd-js",
 	"exports": {
 		".": "./dist/spayd.umd.min.js",
 		"./esm": "./dist/spayd.esm.js",
